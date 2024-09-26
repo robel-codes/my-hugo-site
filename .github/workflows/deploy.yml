@@ -22,7 +22,11 @@ jobs:
       - name: Build Hugo Site for Production
         run: hugo --config hugo.production.toml
 
-      # Step 4: Deploy to GitHub Pages (Production)
+      # Step 4: Disable Jekyll on GitHub Pages
+      - name: Disable Jekyll on GitHub Pages
+        run: echo "" > ./docs/.nojekyll
+
+      # Step 5: Deploy to GitHub Pages (Production)
       - name: Deploy to GitHub Pages (Production)
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -45,7 +49,11 @@ jobs:
       - name: Build Hugo Site for Development
         run: hugo --config hugo.dev.toml
 
-      # Step 4: Deploy to GitHub Pages (Development)
+      # Step 4: Disable Jekyll on GitHub Pages
+      - name: Disable Jekyll on GitHub Pages
+        run: echo "" > ./docs/.nojekyll
+
+      # Step 5: Deploy to GitHub Pages (Development)
       - name: Deploy to GitHub Pages (Development)
         uses: peaceiris/actions-gh-pages@v3
         with:
