@@ -110,3 +110,6 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           branch: ${{ github.ref == 'refs/heads/dev' && 'dev' || 'main' }}  # Deploy to dev branch for dev URL
+      - name: Log deployment URL
+        run: echo "Deployed to ${{ steps.deployment.outputs.page_url }}"
+      
