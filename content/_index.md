@@ -1,5 +1,5 @@
 ---
-title: "Dev Welcome to My Hugo Site"
+title: "Dev2 Welcome to My Hugo Site"
 ---
 
 # Welcome to My Hugo Site
