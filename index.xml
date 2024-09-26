@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Welcome to My Hugo Site on My Hugo Relearn Site Dev</title>
-    <link>https://robel-codes.github.io/my-hugo-site-dev/</link>
-    <description>Recent content in Welcome to My Hugo Site on My Hugo Relearn Site Dev</description>
+    <title>Welcome to My Hugo Site on My Hugo Relearn Site Prod</title>
+    <link>https://robel-codes.github.io/my-hugo-site/</link>
+    <description>Recent content in Welcome to My Hugo Site on My Hugo Relearn Site Prod</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://robel-codes.github.io/my-hugo-site-dev/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://robel-codes.github.io/my-hugo-site/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
