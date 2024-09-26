@@ -1,0 +1,54 @@
+name: Deploy Hugo Site
+
+on:
+  push:
+    branches:
+      - main    # Production branch
+      - dev     # Development branch
+
+jobs:
+  deploy-production:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out the repository
+      - uses: actions/checkout@v2
+
+      # Step 2: Set up Hugo
+      - name: Install Hugo
+        run: sudo apt-get install -y hugo
+
+      # Step 3: Build the site using the production config
+      - name: Build Hugo Site for Production
+        run: hugo --config hugo.production.toml
+
+      # Step 4: Deploy to GitHub Pages (Production)
+      - name: Deploy to GitHub Pages (Production)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs  # Updated to point to the /docs folder
+          destination_dir: engineeringteam/documentation # Production path
+
+  deploy-development:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out the repository
+      - uses: actions/checkout@v2
+
+      # Step 2: Set up Hugo
+      - name: Install Hugo
+        run: sudo apt-get install -y hugo
+
+      # Step 3: Build the site using the development config
+      - name: Build Hugo Site for Development
+        run: hugo --config hugo.dev.toml
+
+      # Step 4: Deploy to GitHub Pages (Development)
+      - name: Deploy to GitHub Pages (Development)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs  # Updated to point to the /docs folder
+          destination_dir: engineeringteam/documentation-dev # Development path

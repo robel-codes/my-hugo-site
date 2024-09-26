@@ -1,0 +1,8 @@
+baseURL = "http://example.com/documentation-dev/"
+languageCode = "en-us"
+title = "My Hugo Relearn Site Dev"
+theme = "relearn"
+
+
+# Add or update the following line in both files:
+publishDir = "docs"
