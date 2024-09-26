@@ -20,7 +20,7 @@ jobs:
 
       # Step 3: Build the site using the production config
       - name: Build Hugo Site for Production
-        run: hugo --config hugo.production.toml
+        run: hugo --config hugo.production.toml --destination docs  # Ensuring it builds to the /docs folder
 
       # Step 4: Disable Jekyll on GitHub Pages
       - name: Disable Jekyll on GitHub Pages
@@ -47,7 +47,7 @@ jobs:
 
       # Step 3: Build the site using the development config
       - name: Build Hugo Site for Development
-        run: hugo --config hugo.dev.toml
+        run: hugo --config hugo.dev.toml --destination docs
 
       # Step 4: Disable Jekyll on GitHub Pages
       - name: Disable Jekyll on GitHub Pages
