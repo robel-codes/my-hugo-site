@@ -65,7 +65,7 @@ jobs:
             --minify \
             --config hugo.production.toml \
             --destination docs \
-            --baseURL "https://robel-codes.github.io/my-hugo-site/"  # Production Base URL
+            --baseURL "${{ steps.pages.outputs.base_url }}/"  
 
       # Build for Development
       - name: Build with Hugo for Development
@@ -80,7 +80,7 @@ jobs:
             --minify \
             --config hugo.dev.toml \
             --destination docs \
-            --baseURL "https://robel-codes.github.io/my-hugo-site-dev/"  # Development Base URL
+            --baseURL "${{ steps.pages.outputs.base_url }}/"  
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
