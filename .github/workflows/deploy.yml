@@ -16,7 +16,9 @@ jobs:
 
       # Step 2: Set up Hugo
       - name: Install Hugo
-        run: sudo apt-get install -y hugo
+        run: |
+          wget https://github.com/gohugoio/hugo/releases/download/v0.92.2/hugo_0.92.2_Linux-64bit.deb
+          sudo dpkg -i hugo_0.92.2_Linux-64bit.deb
 
       # Step 3: Build the site using the production config
       - name: Build Hugo Site for Production
@@ -26,7 +28,11 @@ jobs:
       - name: Disable Jekyll on GitHub Pages
         run: echo "" > ./docs/.nojekyll
 
-      # Step 5: Deploy to GitHub Pages (Production)
+         # Step 5: List generated files for debugging
+      - name: List generated files
+        run: ls -R docs
+
+      # Step 6: Deploy to GitHub Pages (Production)
       - name: Deploy to GitHub Pages (Production)
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -43,7 +49,9 @@ jobs:
 
       # Step 2: Set up Hugo
       - name: Install Hugo
-        run: sudo apt-get install -y hugo
+        run: |
+          wget https://github.com/gohugoio/hugo/releases/download/v0.92.2/hugo_0.92.2_Linux-64bit.deb
+          sudo dpkg -i hugo_0.92.2_Linux-64bit.deb
 
       # Step 3: Build the site using the development config
       - name: Build Hugo Site for Development
@@ -53,10 +61,16 @@ jobs:
       - name: Disable Jekyll on GitHub Pages
         run: echo "" > ./docs/.nojekyll
 
-      # Step 5: Deploy to GitHub Pages (Development)
+         # Step 5: List generated files for debugging
+      - name: List generated files
+        run: ls -R docs
+
+      # Step 6: Deploy to GitHub Pages (Development)
       - name: Deploy to GitHub Pages (Development)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs  # Updated to point to the /docs folder
           # destination_dir: documentation-dev # Development path
+
+          
