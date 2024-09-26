@@ -1,4 +1,4 @@
-baseURL = "https://robel-codes.github.io/my-hugo-site-dev/"
+baseURL = "https://robel-codes.github.io/my-hugo-site/dev/"
 languageCode = "en-us"
 title = "My Hugo Relearn Site Dev"
 theme = "relearn"
