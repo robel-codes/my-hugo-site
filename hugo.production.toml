@@ -1,4 +1,4 @@
-baseURL = "http://example.com/documentation/"
+baseURL = "http://robelcodes.github.io/documentation/"
 languageCode = "en-us"
 title = "My Hugo Relearn Site Prod"
 theme = "relearn"
