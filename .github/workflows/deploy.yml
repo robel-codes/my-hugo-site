@@ -15,14 +15,13 @@ jobs:
       - uses: actions/checkout@v2
 
       # Step 2: Set up Hugo
-      - name: Install Hugo
-        run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v0.92.2/hugo_0.92.2_Linux-64bit.deb
-          sudo dpkg -i hugo_0.92.2_Linux-64bit.deb
+      - uses: peaceiris/actions-hugo@v2
+        with:
+           hugo-version: 'v0.134.3'  # Replace with your local version
 
       # Step 3: Build the site using the production config
       - name: Build Hugo Site for Production
-        run: hugo --config hugo.production.toml --destination docs  # Ensuring it builds to the /docs folder
+        run: hugo --config hugo.production.toml --destination docs --verbose  # Ensuring it builds to the /docs folder
 
       # Step 4: Disable Jekyll on GitHub Pages
       - name: Disable Jekyll on GitHub Pages
@@ -48,14 +47,13 @@ jobs:
       - uses: actions/checkout@v2
 
       # Step 2: Set up Hugo
-      - name: Install Hugo
-        run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v0.92.2/hugo_0.92.2_Linux-64bit.deb
-          sudo dpkg -i hugo_0.92.2_Linux-64bit.deb
+      - uses: peaceiris/actions-hugo@v2
+        with:
+           hugo-version: 'v0.134.3'  # Replace with your local version
 
       # Step 3: Build the site using the development config
       - name: Build Hugo Site for Development
-        run: hugo --config hugo.dev.toml --destination docs
+        run: hugo --config hugo.dev.toml --destination docs --verbose
 
       # Step 4: Disable Jekyll on GitHub Pages
       - name: Disable Jekyll on GitHub Pages
