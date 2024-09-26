@@ -100,10 +100,10 @@ jobs:
           echo "Current branch: ${{ github.ref }}"
           if [[ "${{ github.ref }}" == "refs/heads/dev" ]]; then
             echo "Building for development"
-            echo "baseURL=https://tumra.github.io/my-hugo-site/dev/" >> $GITHUB_ENV
+            echo "baseURL=https://robel-codes.github.io/my-hugo-site/dev/" >> $GITHUB_ENV
           else
             echo "Building for production"
-            echo "baseURL=https://tumra.github.io/my-hugo-site/" >> $GITHUB_ENV
+            echo "baseURL=https://robel-codes.github.io/my-hugo-site/" >> $GITHUB_ENV
           fi
       - name: Deploy to GitHub Pages
         id: deployment
